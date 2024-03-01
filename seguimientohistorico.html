@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación de API - seguimientohistorico/title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Estilos todos de la página -->
+    <link rel="stylesheet" href="estilodocumentacion.css"> <!-- Estilos específicos para la documentación -->
+    <link rel="stylesheet" href="estilosgenerales.css"> <!-- Estilos generales -->
+    <link rel="stylesheet" href="logo.css"> <!-- logo -->
+    <style>
+        .highlight {
+            font-weight: bold;
+            color: #004D93;
+        }
+
+        /* Estilos para la visualización de JSON */
+        .json-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: #888;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #004D93;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="https://andesmarcargas.com/">
+                        <img src="Logo-Andesmar-Cargas.svg" alt="Logo de Andesmar Cargas" width="400" height="100">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="info">
+            <div class="content">
+                <h1>Seguimiento historico</h1>
+                <p style="font-weight: bold; color: #353131;">Con este método realizaras el seguimiento del estado histórico de un Pedido.</p>
+                <h3>Request</h3>
+                <p><span class="highlight">URL</span>: https://apitest.andesmarcargas.com/</p>
+                <p><span class="highlight">Método</span>: Post</p>
+                <p><span class="highlight">EndPoint</span>: api/EstadosHistoricos</p>
+                <p><span class="highlight">Body</span>: raw/ Json</p>
+                <h3>Parámetros</h3>
+                <table>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Descripción</th>
+                        <th>Obligatorio</th>
+                    </tr>
+                    <tr>
+                        <td>Usuario</td>
+                        <td>Usuario brindado por Andesmar</td>
+                        <td>Si</td>
+                    </tr>
+                    <tr>
+                        <td>Clave</td>
+                        <td>Password brindado por Andesmar</td>
+                        <td>Si</td>
+                    </tr>
+                    <tr>
+                        <td>Codigo de Cliente</td>
+                        <td>Usuario brindado por Andesmar</td>
+                        <td>Si</td>
+                    </tr>
+                    <tr>
+                        <td>Nro Pedido</td>
+                        <td>Número del pedido</td>
+                        <td>Si</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+        
+        <!-- Ejemplos de Request y Response -->
+        <section class="json-examples">
+            <h3>Ejemplo de Request</h3>
+            <div class="json-container">
+                {
+                    "logueo": {
+                    "Usuario": "sample string 1",
+                    "Clave": "sample string 2",
+                    "CodigoCliente": "sample string 3"
+                    },
+                    "NroPedido": "sample string 1"
+                }
+            </div>
+            <h3>Ejemplo de Response</h3>
+            <div class="json-container">
+                {
+                    "NroGuia": "XXXX",
+                    "UnidadVentaDescrip": "XXXX",
+                    "ModalidadEntregaDescrip": "XXXX",
+                    "EstadoActual": "XXXX",
+                    "NroRemitoCliente": "XXXX",
+                    "FechaEmision": "2024-12-30",
+                    "Origen": "XXXX",
+                    "NroPedido": "XXXX",
+                    "NroOrden": "XXXX",
+                    "Destino": "XXXX",
+                    "Error": "XXXX"
+                }
+                
+            </div>
+        </section>
+    </main>
+
+    
+
+    <footer>
+        <div class="container">
+            <p>&copy; En 2024, Impulsa tu éxito, simplifica procesos y crea experiencias para tus clientes. Unite a la evolución, unite a Andesmar Cargas</p>
+            <p>ANDESMAR CARGAS. Todos los derechos reservados <a href="https://andesmarcargas.com/terminos_condiciones.html" target="_blank">Términos y Condiciones</a></p>
+
+            <a href="index.html" class="back-to-top">↑</a>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

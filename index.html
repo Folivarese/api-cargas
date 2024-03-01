@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>apiandesmarcargas</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Estilos todos de la página -->
+    <link rel="stylesheet" href="diseñobotones.css"> <!-- Estilos de los botones -->
+    <link rel="stylesheet" href="logo.css"> <!-- logo -->
+    <link rel="stylesheet" href="animacioninicio.css"> <!-- Animación de carga -->
+
+    <style>
+        .highlight {
+            font-weight: bold;
+            color: #004D93;
+        }
+
+        /* Estilos de los json*/
+        .json-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: #888;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #004D93;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animación de carga para que sea en circulo al cargar la web -->
+    <div id="loader">
+        <div class="loader-circle"></div>
+    </div>
+
+    <!-- Contenido de la página -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="https://andesmarcargas.com/">
+                        <img src="Logo-Andesmar-Cargas.svg" alt="Logo de Andesmar Cargas" width="400" height="100">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+
+    <main class="container">
+        <section class="info">
+            <div class="content">
+                <div class="title-left">
+                    <h1>Andesmar Cargas Developers</h1>
+                </div>
+                <p style="font-weight: bold; color: #353131;">
+                    Nos complace darle la bienvenida a la documentación de nuestra API REST. Este recurso ofrece una descripción detallada de los métodos disponibles, acompañada de instrucciones 
+                    precisas para su acceso. Recordamos que esta documentación está diseñada para mejorar su experiencia como cliente de Andesmar Cargas, asegurando un uso eficiente y 
+                    efectivo de nuestros servicios.</p>
+                
+                <h3>Precondiciones</h3>
+                <ul>
+                    <li>Ser un cliente registrado en Andesmar Cargas</li>
+                    <li>Contar con credenciales de usuario y contraseña otorgadas por Andesmar</li>
+                    <li>Disponer del código de cliente asignado por la empresa</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Botones que llevan a la doc -->
+        <section class="api-methods">
+            <h3>Métodos de la API</h3>
+            <div class="api-buttons">
+                <button onclick="window.location.href='codigo-agrupacion.html'">Código de Agrupación</button>                
+                <button onclick="window.location.href='Insercion del pedido.html'">Inserción del Pedido</button>
+                <button onclick="window.location.href='validarcodigopostal.html'">Validar código postal</button>
+                <button onclick="window.location.href='seguimiento.html'">Seguimiento estado actual</button>
+                <button onclick="window.location.href='seguimientohistorico.html'">Seguimiento estado histórico</button>
+                <button onclick="window.location.href='guiadigitalizada.html'">Conforme de entrega digitalizada</button>
+                <button onclick="window.location.href='generacionetiqueta.html'">Generación etiqueta</button>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- todo lo de contacto, a evaluar si se deja o no , preguntar a Agus -->
+        <section class="contacto">
+            <h3>Contacto</h3>
+            <p>Si tienes alguna pregunta, comentario o necesitas asistencia adicional, no dudes en contactarnos.</p>
+            <ul>
+                <li>AGUSTIN LAHUN - IT Manager: agustinlahun@andesmar.com.ar</a></li>
+                <li>FABIAN OLIVARES - IT Lead: fabianolivares@andesmar.com.ar</a></li>
+                <li>PAMELA VASQUEZ - QA Lead: pamelavasquez@andesmar.com.ar</a></li>
+            </ul>
+        </section>
+    </main>
+
+
+
+
+
+    <footer>
+        <div>
+            <p>&copy; En 2024, Impulsa tu éxito, simplifica procesos y crea experiencias para tus clientes. Unite a la evolución, unite a Andesmar Cargas</p>
+            <p>ANDESMAR CARGAS. Todos los derechos reservados <a href="https://andesmarcargas.com/terminos_condiciones.html" target="_blank">Términos y Condiciones</a></p>
+        </div>
+        
+        
+        <div class="copyright">
+        </div>
+    </footer>
+    
+    <!-- javas para que cuando carge la web, deje de girar el circulo -->
+    <script>
+        window.addEventListener('load', function () {
+            // Verificar si la página se está cargando por primera vez
+            if (window.performance.navigation.type === 1) {
+                // Agregar un retraso de 1.5 segundos (1500 milisegundos)
+                setTimeout(function() {
+                    // Ocultar la animación de carga después del retraso
+                    document.getElementById('loader').style.display = 'none';
+                }, 1500);
+            } else {
+                // Si la página se está recargando, ocultar la animación inmediatamente
+                document.getElementById('loader').style.display = 'none';
+            }
+        });
+    </script>
+    
+</body>
+</html>

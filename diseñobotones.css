@@ -1,0 +1,22 @@
+/* Estilos para los botones de la API con animación de pulsación */
+.api-buttons button {
+    width: 200px; /* Ancho fijo para todos los botones */
+    padding: 10px;/* alto del óvalo */
+    margin: 500x;
+    border: none;
+    border-radius: 550px;
+    background-color: #004D93;
+    color: #FFFFFF;
+    font-size: 12.5px; /* tamaño del boton */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.api-buttons button:hover {
+    background-color: #00274D; /* Cambio de color al pasar el cursor */
+}
+
+.api-buttons button:active {
+    transform: scale(0.95); /* Reducción de tamaño al hacer clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Efecto de sombra al hacer clic */
+}

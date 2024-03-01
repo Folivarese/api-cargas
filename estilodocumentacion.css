@@ -1,0 +1,90 @@
+/* Estilos para la documentación de la API - Código de Agrupación */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    color: #004D93;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #004D93;
+    padding: 0px 0;
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+.logo {
+    font-size: 32px;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.info {
+    margin-bottom: 30px;
+}
+
+.info p {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #004D93;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+/* Estilos para la documentación de la API - Código de Agrupación */
+/* ... tus estilos existentes ... */
+
+/* Estilos para la flecha flotante */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background-color: #004D93;
+    padding: 20px 25px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: rotate(-90deg); /* Rotar el botón hacia la izquierda */
+}
+
+.back-to-top:hover {
+    transform: scale(1.1) rotate(-90deg); /* Agrandar y rotar al hacer hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+

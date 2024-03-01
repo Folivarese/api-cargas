@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación de API - Código de Agrupación</title>
+    <link rel="stylesheet" href="estilos.css"> <!-- Estilos todos de la página -->
+    <link rel="stylesheet" href="estilodocumentacion.css"> <!-- Estilos específicos para la documentación -->
+    <link rel="stylesheet" href="estilosgenerales.css"> <!-- Estilos generales -->
+    <link rel="stylesheet" href="logo.css"> <!-- logo -->
+    <style>
+        .highlight {
+            font-weight: bold;
+            color: #004D93;
+        }
+
+        /* Estilos para la visualización de JSON */
+        .json-container {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+        }
+
+        /* Estilos para el footer */
+        footer {
+            background-color: #f2f2f2;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            color: #888;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #004D93;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <a href="https://andesmarcargas.com/">
+                        <img src="Logo-Andesmar-Cargas.svg" alt="Logo de Andesmar Cargas" width="400" height="100">
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="info">
+            <div class="content">
+                <h1>Inserción del pedido</h1>
+                <p style="font-weight: bold; color: #353131;">Con este método facilitaremos el proceso de facturación a través de Andesmar al ofrecerte la posibilidad de insertar tus pedidos junto con sus números de remito correspondientes.</p>
+                <h3>Request</h3>
+                <p><span class="highlight">URL</span>: https://apitest.andesmarcargas.com/</p>
+                <p><span class="highlight">Método</span>: Post</p>
+                <p><span class="highlight">EndPoint</span>: api/InsertPedidoMulti</p>
+                <p><span class="highlight">Body</span>: raw/ Json</p>
+                <h3>Parámetros</h3>
+                <table>
+                    <tr>
+                        <th>Variable</th>
+                        <th>Descripción</th>
+                        <th>Tipo</th>
+                        <th>Obligatorio</th>
+                    </tr>
+                    <tr>
+                        <td>CodigoPostalRemitente</td>
+                        <td>Código postal del domicilio del remitente</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>CalleRemitente</td>
+                        <td>Calle del Remitente (solo caracteres alfabéticos)</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>CalleNroRemitente</td>
+                        <td>Número de Calle del Remitente (solo caracteres numéricos)</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>NombreApellidoDestinatario</td>
+                        <td>Nombre y Apellido del destinatario</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>CodigoPostalDestinatario</td>
+                        <td>Código postal del domicilio del Destinatario</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>CalleDestinatario</td>
+                        <td>Calle del Destinatario (solo caracteres alfabéticos)</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>CalleNroDestinatario</td>
+                        <td>Calle Nro del Destinatario (solo caracteres numéricos)</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>TelefonoDestinatario</td>
+                        <td>Teléfono del Destinatario (Hasta 20 caracteres numéricos y carácter +)</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Telefono Remitente</td>
+                        <td>Teléfono del Remitente (Hasta 20 caracteres numéricos y carácter +)</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>MailDestinatario</td>
+                        <td>Mail del Destinatario</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>NroRemito</td>
+                        <td>Nro. De remito del cliente</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Bultos</td>
+                        <td>Cantidad de bultos totales del pedido (4 números enteros y 3 decimales)</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Peso</td>
+                        <td>Peso total del pedido (4 números enteros y 3 decimales)</td>
+                        <td>Double</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>ValorDeclarado</td>
+                        <td>Valor Declarado total del pedido</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>M3</td>
+                        <td>M3 del pedido (4 números enteros y 8 decimales)</td>
+                        <td>Double</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Alto</td>
+                        <td>Alto del pedido (4 números enteros y 3 decimales)</td>
+                        <td>Double</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Ancho</td>
+                        <td>Ancho del pedido (4 números enteros y 3 decimales)</td>
+                        <td>Double</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Largo</td>
+                        <td>Largo del pedido (4 números enteros y 3 decimales)</td>
+                        <td>Double</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Observaciones</td>
+                        <td>Largo del pedido</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>ModalidadEntregaID</td>
+                        <td>Modalidad del pedido (1=Sucursal-Sucursal, 2=Puerta-Puerta, 3=Sucursal-Puerta, 4=Puerta-Sucursal)</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Servicio</td>
+                        <td>Si cuenta con el servicio de pago en destino enviar TRUE, caso contrario FALSE</td>
+                        <td>Boolean</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>servicio.EsRemitoconformado</td>
+                        <td>Si cuenta con el remito conformado enviar TRUE, caso contrario FALSE</td>
+                        <td>Boolean</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Logueo.Usuario</td>
+                        <td>Usuario que proporciona Andesmar Cargas</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Logueo.Clave</td>
+                        <td>Usuario que proporciona Andesmar Cargas</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>Logueo.CodigoCliente</td>
+                        <td>Código del cliente que se va a facturar un pedido</td>
+                        <td>String</td>
+                        <td>SI</td>
+                    </tr>
+                    <tr>
+                        <td>CodigoAgrupacion</td>
+                        <td>Código de agrupación que se obtuvo</td>
+                        <td>Int</td>
+                        <td>SI</td>
+                    </tr>
+                </table>               
+                
+            </div>
+        </section>
+        
+        <!-- Ejemplos de Request y Response -->
+        <section class="json-examples">
+            <h3>Ejemplo de Request: Multi bulto / un solo bulto</h3>
+            <div class="json-container">
+                {
+                    "CodigoPostalRemitente": "sample string 1",
+                    "CalleRemitente": "sample string 2",
+                    "CalleNroRemitente": "sample string 3",
+                    "NombreApellidoDestinatario": "sample string 4",
+                    "CodigoPostalDestinatario": "sample string 5",
+                    "CalleDestinatario": "sample string 6",
+                    "CalleNroDestinatario": "sample string 7",
+                    "TelefonoDestinatario": "sample string 8",
+                    "TelefonoRemitente": "sample string 9",
+                    "MailDestinatario": "sample string 10",
+                    "NroRemito": "sample string 11",
+                    "ProvinciaDestino": "sample string 12",
+                    "LocalidadDestino": "sample string 13",
+                    "ProductoAEntregar": "sample string 14",
+                    "Bultos": 1,
+                    "Peso": 1.1,
+                    "ValorDeclarado": 1,
+                    "M3": 1.1,
+                    "Alto": [
+                    1.1,
+                    2.1
+                    ],
+                    "Ancho": [
+                    1.1,
+                    2.1
+                    ],
+                    "Largo": [
+                    1.1,
+                    2.1
+                    ],
+                    "Observaciones": "sample string 15",
+                    "ModalidadEntregaID": 1,
+                    "servicio": {
+                    "EsFletePagoDestino": true,
+                    "EsRemitoconformado": true
+                    },
+                    "logueo": {
+                    "Usuario": "sample string 1",
+                    "Clave": "sample string 2",
+                    "CodigoCliente": "sample string 3"
+                    },
+                    "CodigoAgrupacion": 16
+                    }
+            </div>
+            <h3>Ejemplo de Response</h3>
+            <div class="json-container">
+                {
+                    "NroPedido": XXXX,
+                    "Codigo": "XXXX",
+                    "Error": "XXXX"
+                }
+            </div>
+        </section>
+        <section class="chat-box">
+                
+            </form>
+            <!-- Contenedor para mostrar el JSON generado -->
+            <div id="jsonResult"></div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; En 2024, Impulsa tu éxito, simplifica procesos y crea experiencias para tus clientes. Unite a la evolución, unite a Andesmar Cargas</p>
+            <p>ANDESMAR CARGAS. Todos los derechos reservados <a href="https://andesmarcargas.com/terminos_condiciones.html" target="_blank">Términos y Condiciones</a></p>
+            <a href="index.html" class="back-to-top">↑</a>
+        </div>
+    </footer>
+    
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
